@@ -48,7 +48,7 @@ export const AlbumPage = () => {
         <div className="relative min-h-full">
           {/* bg gradient */}
           <div
-            className="absolute inset-0 bg-gradient-to-b from-purple-600/50 via-zinc-900/80 to-zinc-900 
+            className="absolute inset-0 bg-gradient-to-b  from-zinc-800 via-zinc-900 to-purple-950/40 p-4
                 pointer-events-none"
             aria-hidden="true"
           />

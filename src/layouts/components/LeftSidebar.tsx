@@ -20,7 +20,7 @@ export const LeftSidebar = () => {
   return (
     <div className="h-full flex flex-col gap-2">
       {/* Navigation menu */}
-      <div className="rounded-lg bg-zinc-900 p-4">
+      <div className="rounded-lg bg-zinc-800 p-4">
         <div className="space-y-2">
           <Link
             to={"/"}
@@ -53,7 +53,7 @@ export const LeftSidebar = () => {
         </div>
       </div>
       {/* Library section */}
-      <div className="flex-1 rounded-lg bg-zinc-900 p-4">
+      <div className="flex-1 rounded-lg bg-gradient-to-b from-zinc-800 via-zinc-900 to-purple-950/20 p-4">
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center text-white px-2">
             <Library className="size-5 mr-2" />

@@ -1,8 +1,8 @@
 import { axiosInstance } from "@/lib/axios";
 import { useEffect, useState } from "react";
-import { Loader } from "lucide-react";
 import { useAuth } from "@clerk/clerk-react";
 import { useAuthStore } from "@/stores/useAuthStore";
+import { useChatStore } from "@/stores/useChatStore";
 
 // update token if exists, if not delete it
 const updateApiToken = (token: string | null) => {
@@ -14,9 +14,10 @@ const updateApiToken = (token: string | null) => {
 };
 // provides authentication
 export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
-  const { getToken } = useAuth();
+  const { getToken, userId } = useAuth();
   const [loading, setLoading] = useState(true);
   const {checkAdminStatus} = useAuthStore();
+  const {initSocket, disconnectSocket} = useChatStore();
 
   useEffect(() => {
     const initAuth = async () => {
@@ -25,6 +26,10 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
         updateApiToken(token);
         if(token) {
           await checkAdminStatus();
+          // init socket
+          if(userId) {
+            initSocket(userId);
+          }
         }
       } catch (error) {
         updateApiToken(null);
@@ -35,12 +40,15 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     };
 
     initAuth();
-  }, [getToken]);
+
+    // clean up
+    return () => disconnectSocket();
+  }, [getToken, userId, checkAdminStatus, initSocket, disconnectSocket]);
 
   if (loading)
     return (
       <div className="h-screen w-full flex items-center justify-center">
-        <Loader className="size-8 text-purple-500 animate-spin" />
+        <img src="/lolhub.png" className=" size-8 animate-spin [animation-duration:1s]" />
       </div>
     );
 

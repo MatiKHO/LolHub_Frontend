@@ -1,9 +1,14 @@
 import { Button } from "@/components/ui/button";
 import { Slider } from "@/components/ui/slider";
-import { formatDuration } from "@/pages/Album/AlbumPage";
 import { usePlayerStore } from "@/stores/usePlayerStore";
 import { Laptop2, ListMusic, Mic, Pause, Play, Shuffle, SkipBack, SkipForward, Volume1 } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
+
+const formatTime = (seconds: number) => {
+	const minutes = Math.floor(seconds / 60);
+	const remainingSeconds = Math.floor(seconds % 60);
+	return `${minutes}:${remainingSeconds.toString().padStart(2, "0")}`;
+};
 
 export const PlaybackControls = () => {
   const { currentSong, isPlaying, togglePlay, playNext, playPrevious } =
@@ -46,7 +51,7 @@ export const PlaybackControls = () => {
   };
 
   return (
-    <footer className="h-20 sm:h-24 bg-zinc-900 border-t border-zinc-800 px-4 mx-2 rounded-lg">
+    <footer className="h-20 sm:h-24 bg-gradient-to-t from-black via-purple-950/20 to-purple-950/20 border-t border-zinc-800 px-4 mx-2 rounded-lg">
       <div className="flex justify-between items-center h-full max-w-[1800px] mx-auto">
         {/* // current playing song */}
         <div className="hidden sm:flex items-center gap-4 min-w-[180px] w-[30%]">
@@ -115,7 +120,7 @@ export const PlaybackControls = () => {
           </div>
           <div className="hidden sm:flex items-center gap-2 w-full">
             <div className="text-xs text-zinc-400">
-              {formatDuration(currentTime)}
+              {formatTime(currentTime)}
             </div>
             <Slider
               value={[currentTime]}
@@ -124,7 +129,7 @@ export const PlaybackControls = () => {
               className="w-full hover:cursor-grab active:cursor-grabbing"
               onValueChange={handleSeek}
             />
-            <div className="text-xs text-zinc-400">{formatDuration(duration)}</div>
+            <div className="text-xs text-zinc-400">{formatTime(duration)}</div>
           </div>
         </div>
         {/* volume controls  */}
@@ -153,7 +158,8 @@ export const PlaybackControls = () => {
                     setVolume(value[0]);
                     if (audioRef.current) {
                         audioRef.current.volume = value[0] / 100;
-                    }
+                    };
+
                 }}
                 />
             </div>

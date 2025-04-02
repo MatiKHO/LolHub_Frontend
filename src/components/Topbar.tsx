@@ -11,12 +11,12 @@ import { cn } from "@/lib/utils";
 export const Topbar = () => {
     const isAdmin = useAuthStore();
   return (
-    <div className="flex items-center justify-between p-4 sticky top-0 bg-zinc-900/75
+    <div className="flex items-center justify-between p-4 sticky top-0 bg-zinc-900 
     backdrop-blur-md z-10 rounded-md
     ">
         <div className="flex gap-2 items-center">
             <img src="/public/lolhub.png" className="size-8 cursor-pointer" alt="lolhub logo" />
-            LolHub!
+             <h1>LolHub!</h1>
         </div>
         <div className="flex items-center gap-4">
             {isAdmin && (
