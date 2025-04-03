@@ -44,9 +44,7 @@ export const AlbumPage = () => {
   return (
     <div className="h-full">
       <ScrollArea className="h-full rounded-md">
-        {/* Main Content */}
         <div className="relative min-h-full">
-          {/* bg gradient */}
           <div
             className="absolute inset-0 bg-gradient-to-b  from-zinc-800 via-zinc-900 to-purple-950/40 p-4
                 pointer-events-none"
@@ -85,11 +83,14 @@ export const AlbumPage = () => {
               className="w-10 h-10 rounded-xs bg-gradient-to-b from-purple-600 via-purple-800 to-zinc-900/80 hover:bg-purple-600 
                  hover:scale-102 duration-200 ease-in-out transition cursor-pointer"
             >
-              {isPlaying && currentAlbum?.songs.some((song) => song._id === currentSong?._id) ? (
+              {isPlaying &&
+              currentAlbum?.songs.some(
+                (song) => song._id === currentSong?._id
+              ) ? (
                 <Pause className="h-5 w-5 size-0.5 text-black fill-black" />
               ) : (
                 <Play className="h-5 w-5 size-0.5 text-black fill-black" />
-                )}
+              )}
             </Button>
           </div>
 

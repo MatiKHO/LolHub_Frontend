@@ -3,7 +3,7 @@ import { Link } from "react-router";
 import { SignedIn } from "@clerk/clerk-react";
 import { buttonVariants } from "@/components/ui/button.tsx";
 import { ScrollArea } from "@/components/ui/scroll-area.tsx";
-import { HomeIcon, Library, MessageCircleIcon } from "lucide-react";
+import { HomeIcon, Library, MessageCircleIcon, User } from "lucide-react";
 import { PlaylistSkeleton } from "@/components/skeletons/PlaylistSkeleton.tsx";
 import { useMusicStore } from "@/stores/useMusicStore.ts";
 import { useEffect } from "react";
@@ -16,7 +16,6 @@ export const LeftSidebar = () => {
     fetchAlbums();
   }, [fetchAlbums]);
 
-
   return (
     <div className="h-full flex flex-col gap-2">
       {/* Navigation menu */}
@@ -27,7 +26,8 @@ export const LeftSidebar = () => {
             className={cn(
               buttonVariants({
                 variant: "ghost",
-                className: "w-full justify-start text-white hover:bg-zinc-800 hover:scale-102 transition-all ease-in-out duration-200 ",
+                className:
+                  "w-full justify-start text-white hover:bg-zinc-800 hover:scale-102 transition-all ease-in-out duration-200 ",
               })
             )}
           >
@@ -48,6 +48,19 @@ export const LeftSidebar = () => {
             >
               <MessageCircleIcon className="mr-2 size-5" />
               <span className="hidden md:inline">Messages</span>
+            </Link>
+            <Link
+              to={"/profile"}
+              className={cn(
+                buttonVariants({
+                  variant: "ghost",
+                  className:
+                    "w-full justify-start text-white hover:bg-zinc-800 hover:scale-102 transition-all ease-in-out duration-200",
+                })
+              )}
+            >
+              <User className="mr-2 size-5" />
+              <span className="hidden md:inline">Profile</span>
             </Link>
           </SignedIn>
         </div>
