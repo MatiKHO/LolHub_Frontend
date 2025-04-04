@@ -10,7 +10,7 @@ export const NotFoundPage = () => {
 			<div className='text-center space-y-8 px-4'>
 				{/* Large animated musical note */}
 				<div className='flex justify-center animate-spin [animation-duration:10s]'>
-					<img src="/lolhub.png" alt="lolhub logo" className="size-25" />
+					<img src="lolhub.png" alt="lolhub logo" className="size-25" />
 				</div>
 
 				{/* Error message */}

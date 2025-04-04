@@ -17,7 +17,7 @@ export const Topbar = () => {
     backdrop-blur-md z-10 rounded-md
     ">
         <div className="flex gap-2 items-center">
-            <img src="/public/lolhub.png" className="size-8 cursor-pointer" alt="lolhub logo" />
+            <img src="lolhub.png" className="size-8 cursor-pointer" alt="lolhub logo" />
              <h1>LolHub!</h1>
         </div>
         <div className="flex items-center gap-4">

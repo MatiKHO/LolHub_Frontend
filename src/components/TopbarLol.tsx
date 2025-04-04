@@ -19,7 +19,7 @@ export const TopbarLol = () => {
     >
       <div className="flex gap-2 items-center">
         <img
-          src="/public/lolhub.png"
+          src="lolhub.png"
           className="size-8 cursor-pointer"
           alt="lolhub logo"
         />

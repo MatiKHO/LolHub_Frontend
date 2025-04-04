@@ -75,7 +75,7 @@ export const MatchHistory = () => {
                       alt={`Item ${itemId}`}
                       className="w-6 h-6 rounded"
                       onError={(e) => {
-                        e.currentTarget.src = "/lolhub.png";
+                        e.currentTarget.src = "lolhub.png";
                         e.currentTarget.alt = "Item not found";
                       }}
                     />

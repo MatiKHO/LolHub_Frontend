@@ -90,7 +90,7 @@ export const ChatPage = () => {
 const NoConversationPlaceholder = () => (
   <div className="flex flex-col items-center justify-center h-full space-y-6">
     <img
-      src="/lolhub.png"
+      src="lolhub.png"
       alt="LolHub"
       className="size-25 animate-pulse [animation-duration:3s]"
     />

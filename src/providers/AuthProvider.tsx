@@ -48,7 +48,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   if (loading)
     return (
       <div className="h-screen w-full flex items-center justify-center">
-        <img src="/lolhub.png" className=" size-8 animate-spin [animation-duration:1s]" />
+        <img src="lolhub.png" className=" size-8 animate-spin [animation-duration:1s]" />
       </div>
     );
 
