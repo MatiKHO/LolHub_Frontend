@@ -50,7 +50,7 @@ export const LeftSidebar = () => {
               <span className="hidden md:inline">Messages</span>
             </Link>
             <Link
-              to={"/profile"}
+              to={"/lol"}
               className={cn(
                 buttonVariants({
                   variant: "ghost",

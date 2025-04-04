@@ -19,7 +19,13 @@ export const AdminPage = () => {
         fetchStats();
     }, [fetchAlbums, fetchSongs, fetchStats]);
 
-    if (!isAdmin && !isLoading) return <div>Unauthorized</div>;
+    if (!isAdmin && !isLoading) {
+      return (
+        <div className="flex items-center justify-center h-screen bg-zinc-900 text-zinc-100">
+          <h1 className="text-2xl">You are not authorized to view this page</h1>
+        </div>
+      );
+    };
 
   return (
     <div className="min-h-screen  bg-zinc-900 text-zinc-100 p-8">

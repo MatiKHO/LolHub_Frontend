@@ -30,14 +30,14 @@ export const TopbarLol = () => {
         {/* Tier List */}
         <Button className="" variant="ghost">
           <span className="hidden md:inline">
-            <Link to={"/tier-list"}>Tier List</Link>
+            <Link to={"/champions"}>Champions</Link>
           </span> 
         </Button>
 
         <Button className="" variant="ghost">
           <span className="hidden md:inline">
             {/* Search  */}
-            <Link to={"/champions"}>Champions</Link>
+            <Link to={"/tier-list"}>Tier List</Link>
           </span> 
         </Button>
 
@@ -53,7 +53,7 @@ export const TopbarLol = () => {
 
 
       <div className="flex items-center gap-4">
-        {isAdmin && (
+        {isAdmin.isAdmin && (
           <Link
             to={"/admin"}
             className={cn(buttonVariants({ variant: "outline" }))}

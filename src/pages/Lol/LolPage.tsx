@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import { useSummonerStore } from "../../stores/useSummonerStore";
 import { SummonerStats } from "./components/SummonerStats";
 import { MatchHistory } from "./components/MatchHistory";
-import { TopbarLol } from "@/components/TopbarLol";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Input } from "@/components/ui/input";
 import { SearchIcon } from "lucide-react";
+import { TopbarLol } from "@/components/TopbarLol";
 
-export const ProfilePage = () => {
+export const LolPage = () => {
   const [searchInput, setSearchInput] = useState("");
   const {getSummoner, getMatches} = useSummonerStore();
   

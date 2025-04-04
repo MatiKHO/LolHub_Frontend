@@ -5,12 +5,13 @@ import { MainLayout } from "./layouts/MainLayout.tsx";
 import { HomePage } from "./pages/Home/HomePage.tsx";
 import { ChatPage } from "./pages/Chat/ChatPage.tsx";
 import { AlbumPage } from "./pages/Album/AlbumPage.tsx";
-import { ProfilePage } from "./pages/Profile/ProfilePage.tsx";
+
 import { NotFoundPage } from "./pages/404/NotFoundPage.tsx";
 
 import { Toaster } from "react-hot-toast";
 import { Route, Routes } from "react-router";
 import { AuthenticateWithRedirectCallback } from "@clerk/clerk-react";
+import { LolPage } from "./pages/Lol/LolPage.tsx";
 
 
 
@@ -27,7 +28,7 @@ const App = () => {
           <Route path="/" element={<HomePage/>}/>
           <Route path="/chat" element={<ChatPage/>}/>
           <Route path="/albums/:albumId" element={<AlbumPage/>}/>
-          <Route path="/profile" element={<ProfilePage/>}/>
+          <Route path="/lol" element={<LolPage/>}/>
           <Route path="*" element={<NotFoundPage/>}/>
         </Route>
       </Routes>
