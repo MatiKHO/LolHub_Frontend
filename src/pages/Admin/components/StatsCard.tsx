@@ -4,7 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 interface StatsCardProps {
     icon: React.ElementType;
     label: string;
-    value: number;
+    value: number | string;
     bgColor: string;
     iconColor: string;
 }
