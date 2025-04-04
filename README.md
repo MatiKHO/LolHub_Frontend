@@ -3,13 +3,14 @@
 
 ## Structure ##
 
-
 └── 📁src
     └── 📁components
         └── SignInOAuthButtons.tsx
         └── 📁skeletons
             └── FeaturedGridSkeleton.tsx
+            └── MatchHistorySkeleton.tsx
             └── PlaylistSkeleton.tsx
+            └── SummonerSkeleton.tsx
             └── UsersListSkeleton.tsx
         └── Topbar.tsx
         └── TopbarLol.tsx
@@ -18,6 +19,7 @@
             └── badge.tsx
             └── button.tsx
             └── card.tsx
+            └── chart.tsx
             └── dialog.tsx
             └── input.tsx
             └── navigation-menu.tsx
@@ -27,6 +29,8 @@
             └── slider.tsx
             └── table.tsx
             └── tabs.tsx
+    └── 📁config
+        └── version.config.ts
     └── 📁layouts
         └── 📁components
             └── AudioPlayer.tsx
@@ -36,6 +40,7 @@
         └── MainLayout.tsx
     └── 📁lib
         └── axios.ts
+        └── riotApi.ts
         └── utils.ts
     └── 📁pages
         └── 📁404
@@ -69,10 +74,13 @@
                 └── SectionGrid.tsx
                 └── SectionGridSkeleton.tsx
             └── HomePage.tsx
-        └── 📁Profile
+        └── 📁Lol
             └── 📁components
-                └── SummonerSection.tsx
-            └── ProfilePage.tsx
+                └── MatchHistory.tsx
+                └── SummonerCard.tsx
+                └── SummonerStats.tsx
+            └── LolPage.tsx
+            └── SummonerStats.css
     └── 📁providers
         └── AuthProvider.tsx
     └── 📁stores
@@ -80,6 +88,7 @@
         └── useChatStore.ts
         └── useMusicStore.ts
         └── usePlayerStore.ts
+        └── useSummonerStore.ts
     └── 📁types
         └── index.ts
     └── App.tsx
