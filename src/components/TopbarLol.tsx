@@ -6,6 +6,9 @@ import { useAuthStore } from "@/stores/useAuthStore";
 import { Button, buttonVariants } from "./ui/button";
 import { cn } from "@/lib/utils";
 
+
+
+
 export const TopbarLol = () => {
   const isAdmin = useAuthStore();
   return (
@@ -22,25 +25,33 @@ export const TopbarLol = () => {
         />
         <h1>LolHub!</h1>
       </div>
-      <div className="flex items-center">
-        <Button variant={"ghost"} className="">
-          <Link to={"/tier-list"} className="flex items-center gap-2">
-            Tier List
-          </Link>
+
+      <div className="flex items-center gap-2">
+        {/* Tier List */}
+        <Button className="" variant="ghost">
+          <span className="hidden md:inline">
+            <Link to={"/tier-list"}>Tier List</Link>
+          </span> 
         </Button>
 
-        <Button variant={"ghost"} className="">
-          <Link to={"/champions"} className="flex items-center gap-2">
-            Champions
-          </Link>
+        <Button className="" variant="ghost">
+          <span className="hidden md:inline">
+            {/* Search  */}
+            <Link to={"/champions"}>Champions</Link>
+          </span> 
         </Button>
 
-        <Button variant={"ghost"} className="">
-          <Link to={"/items"} className="flex items-center gap-2">
-            Items
-          </Link>
+        <Button className="" variant="ghost">
+          <span className="hidden md:inline">
+            {/* Items  */}
+            <Link to={"/items"}>Items</Link>
+          </span> 
         </Button>
+        
+        
       </div>
+
+
       <div className="flex items-center gap-4">
         {isAdmin && (
           <Link

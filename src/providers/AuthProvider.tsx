@@ -33,7 +33,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
         }
       } catch (error) {
         updateApiToken(null);
-        console.log("Error in authProvider", error);
+        console.error("Error in authProvider", error);
       } finally {
         setLoading(false);
       }

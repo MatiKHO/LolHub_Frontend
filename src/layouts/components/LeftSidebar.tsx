@@ -3,7 +3,7 @@ import { Link } from "react-router";
 import { SignedIn } from "@clerk/clerk-react";
 import { buttonVariants } from "@/components/ui/button.tsx";
 import { ScrollArea } from "@/components/ui/scroll-area.tsx";
-import { HomeIcon, Library, MessageCircleIcon, User } from "lucide-react";
+import { Gamepad, HomeIcon, Library, MessageCircleIcon } from "lucide-react";
 import { PlaylistSkeleton } from "@/components/skeletons/PlaylistSkeleton.tsx";
 import { useMusicStore } from "@/stores/useMusicStore.ts";
 import { useEffect } from "react";
@@ -59,8 +59,8 @@ export const LeftSidebar = () => {
                 })
               )}
             >
-              <User className="mr-2 size-5" />
-              <span className="hidden md:inline">Profile</span>
+              <Gamepad className="mr-2 size-5" />
+              <span className="hidden md:inline">League Of Legends</span>
             </Link>
           </SignedIn>
         </div>

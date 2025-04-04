@@ -1,0 +1,1 @@
+export const LOL_VERSION = "14.6.1"
