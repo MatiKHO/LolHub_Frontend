@@ -1,12 +1,14 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { ClerkProvider } from "@clerk/clerk-react";
+import { ClerkProvider} from "@clerk/clerk-react";
 import App from "./App.tsx";
 import "./index.css";
 import { BrowserRouter } from "react-router";
 import { AuthProvider } from "./providers/AuthProvider.tsx";
 
+
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
+const clerkFrontendApi = process.env.VITE_APP_CLERK_FRONTEND_API;
 
 if (!PUBLISHABLE_KEY) {
   throw new Error("Missing Publishable Key");
@@ -14,7 +16,7 @@ if (!PUBLISHABLE_KEY) {
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <ClerkProvider publishableKey={PUBLISHABLE_KEY} afterSignOutUrl="/">
+    <ClerkProvider signInUrl={clerkFrontendApi} publishableKey={PUBLISHABLE_KEY} afterSignOutUrl="/">
       <AuthProvider>
         <BrowserRouter>
           <App />
