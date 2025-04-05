@@ -8,7 +8,6 @@ import { AuthProvider } from "./providers/AuthProvider.tsx";
 
 
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
-const clerkFrontendApi = process.env.VITE_PUBLIC_CLERK_FRONTEND_API;
 
 if (!PUBLISHABLE_KEY) {
   throw new Error("Missing Publishable Key");
@@ -16,7 +15,7 @@ if (!PUBLISHABLE_KEY) {
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <ClerkProvider signInUrl={clerkFrontendApi} publishableKey={PUBLISHABLE_KEY} afterSignOutUrl="/">
+    <ClerkProvider publishableKey={PUBLISHABLE_KEY} afterSignOutUrl="/">
       <AuthProvider>
         <BrowserRouter>
           <App />
