@@ -8,7 +8,7 @@ import { AuthProvider } from "./providers/AuthProvider.tsx";
 
 
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
-const clerkFrontendApi = process.env.VITE_APP_CLERK_FRONTEND_API;
+const clerkFrontendApi = process.env.VITE_PUBLIC_CLERK_FRONTEND_API;
 
 if (!PUBLISHABLE_KEY) {
   throw new Error("Missing Publishable Key");
