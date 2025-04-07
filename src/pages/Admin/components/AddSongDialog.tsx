@@ -160,7 +160,7 @@ export const AddSongDialog = () => {
 						<label className='text-sm font-medium'>Title</label>
 						<Input
 							value={newSong.title}
-							// onChange={(e) => setNewSong({ ...newSong, title: e.target.value })}
+							onChange={(e) => setNewSong({ ...newSong, title: e.target.value })}
 							className='bg-zinc-800 border-zinc-700'
 						/>
 					</div>
@@ -169,7 +169,7 @@ export const AddSongDialog = () => {
 						<label className='text-sm font-medium'>Artist</label>
 						<Input
 							value={newSong.artist}
-							// onChange={(e) => setNewSong({ ...newSong, artist: e.target.value })}
+							onChange={(e) => setNewSong({ ...newSong, artist: e.target.value })}
 							className='bg-zinc-800 border-zinc-700'
 						/>
 					</div>
@@ -180,7 +180,7 @@ export const AddSongDialog = () => {
 							type='number'
 							min='0'
 							value={newSong.duration}
-							// onChange={(e) => setNewSong({ ...newSong, duration: e.target.value || "0" })}
+							onChange={(e) => setNewSong({ ...newSong, duration: e.target.value || "0" })}
 							className='bg-zinc-800 border-zinc-700'
 						/>
 					</div>
@@ -189,7 +189,7 @@ export const AddSongDialog = () => {
 						<label className='text-sm font-medium'>Album (Optional)</label>
 						<Select
 							value={newSong.album}
-							// onValueChange={(value) => setNewSong({ ...newSong, album: value })}
+							onValueChange={(value) => setNewSong({ ...newSong, album: value })}
 						>
 							<SelectTrigger className='bg-zinc-800 border-zinc-700'>
 								<SelectValue placeholder='Select album' />

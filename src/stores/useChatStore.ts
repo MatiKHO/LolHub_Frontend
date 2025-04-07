@@ -22,11 +22,13 @@ interface ChatStore {
 	setSelectedUser: (user: User | null) => void;
 }
 
-const baseURL = import.meta.env.MODE === "development" ? "http://localhost:3000" : "/";
+const baseURL = import.meta.env.MODE === "development"
+  ? "http://localhost:3000"
+  : "https://lolhub-backend.onrender.com";
 
 const socket = io(baseURL, {
-	autoConnect: false, // only connect if user is authenticated
-	withCredentials: true,
+  autoConnect: false,
+  withCredentials: true,
 });
 
 export const useChatStore = create<ChatStore>((set, get) => ({
